@@ -62,4 +62,82 @@
         .container {
             max-width: 1200px;
             margin: auto;
-            pa
+            padding: 25px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .box h2 {
+            color: #0a4db3;
+            margin-top: 0;
+            font-size: 24px;
+            border-left: 5px solid #0a4db3;
+            padding-left: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        @media(max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .hero {
+                font-size: 26px;
+                text-align: center;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="https://raw.githubusercontent.com/es1063122-creator/dJsafety/main/logo.png" alt="Company Logo">
+    <div class="site-name">동진토건(주)</div>
+
+    <nav>
+        <a href="#">회사소개</a>
+        <a href="#">안전점검</a>
+        <a href="#">장비점검</a>
+        <a href="#">자료실</a>
+        <a href="#">AI 분석</a>
+        <a href="#">문의하기</a>
+    </nav>
+</header>
+
+<div class="hero">
+    안전이 최우선입니다
+</div>
+
+<div class="container">
+    <div class="box">
+        <h2>동진토건(주) 소개</h2>
+        <p>
+            동진토건(주)은 건설현장 안전관리 전문기업으로서<br>
+            체계적인 안전점검, 장비검사, 위험성평가, AI 기반 안전진단 서비스를 제공합니다.
+        </p>
+    </div>
+
+    <div class="box">
+        <h2>주요 서비스</h2>
+        <ul>
+            <li>현장 정기 안전점검</li>
+            <li>굴착기 · 덤프 등 건설장비 점검</li>
+            <li>공종별 위험성평가 및 개선대책</li>
+            <li>AI 기반 사진분석 및 자동 리포트 생성</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
