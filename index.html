@@ -62,7 +62,7 @@
             margin-left: auto;
         }
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1581091012184-5c7b4a29a132?auto=format&fit=crop&w=1400&q=70') no-repeat center/cover;
+            position: relative;
             height: 420px;
             display: flex;
             flex-direction: column;
@@ -70,6 +70,30 @@
             justify-content: center;
             color: white;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            overflow: hidden;
+        }
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
         }
         .hero h1 {
             font-size: 48px;
@@ -79,23 +103,6 @@
         .hero p {
             font-size: 20px;
             margin-bottom: 30px;
-        }
-        .hero-btn {
-            background-color: #0a4db3;
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .hero-btn:hover {
-            background-color: #083a8a;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
         .container {
             max-width: 1200px;
@@ -271,6 +278,7 @@
     <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
     <nav id="mainNav">
         <a href="#about">회사소개</a>
+        <a href="https://raw.githubusercontent.com/es1063122-creator/dj-safety/main/%EC%A7%80%EB%AA%85%EC%9B%90(2025.10.01).pdf" target="_blank">지명원</a>
         <a href="https://es1063122-creator.github.io/dongjin-safety-check/" target="_blank">안전점검</a>
         <a href="https://script.google.com/macros/s/AKfycbwJMgTIrp7ZBHZ6Bm0qUN2G26Rh6hRTbmNswmxLZpOMQMzlyQWfS7LQXxTgVvb2FuUl/exec" target="_blank">관리감독자 점검</a>
         <a href="https://script.google.com/macros/s/AKfycbxJH_ImVB-hZH7x0bsyKsvo7bRGDirtlZ87yuCAnDZzNH9LhMRxNZgp0-bT8iI-Ys8O/exec" target="_blank">장비점검</a>
@@ -281,9 +289,12 @@
 </header>
 
 <div class="hero">
+    <video autoplay muted loop playsinline>
+        <source src="https://raw.githubusercontent.com/es1063122-creator/dj-safety/main/%EB%8F%99%EC%98%81%EC%83%81.mp4" type="video/mp4">
+        귀하의 브라우저는 비디오 태그를 지원하지 않습니다.
+    </video>
     <h1>안전이 최우선입니다</h1>
     <p>건설현장의 안전을 책임지는 전문 파트너</p>
-    <button class="hero-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">상담 문의하기</button>
 </div>
 
 <div class="container">
@@ -404,6 +415,16 @@
         </div>
     </div>
 
+    <div class="box" style="background: linear-gradient(135deg, #0a4db3 0%, #0d5fd9 100%); color: white; text-align: center; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onclick="window.open('https://raw.githubusercontent.com/es1063122-creator/dj-safety/main/%EC%A7%80%EB%AA%85%EC%9B%90(2025.10.01).pdf', '_blank')" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 30px rgba(10, 77, 179, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 15px rgba(0,0,0,0.08)'">
+        <h2 style="color: white; border-left: 5px solid white; padding-left: 15px; margin-bottom: 20px;">📄 지명원 (2025.10.01)</h2>
+        <p style="font-size: 18px; margin-bottom: 20px;">
+            동진토건(주)의 지명원을 확인하실 수 있습니다.
+        </p>
+        <div style="font-size: 16px; opacity: 0.9;">
+            클릭하여 PDF 문서 열기 →
+        </div>
+    </div>
+
     <h2 class="section-title" id="services">주요 서비스</h2>
     <div class="services-grid">
         <div class="service-card" style="cursor: pointer;" onclick="window.open('https://es1063122-creator.github.io/dongjin-safety-check/', '_blank')">
@@ -495,9 +516,9 @@
             건설현장 안전관리에 대해 궁금하신 점이 있으시면 언제든 연락주세요.
         </p>
         <p style="font-size: 18px; font-weight: 600; color: #0a4db3; margin: 10px 0;">
-            📞 대표전화: 031-792-8361<br>
-            📧 이메일: es5183@djenc.co.kr<br>
-            🏢 본사: 경기도 하남시 미사강변중앙로 210, 1006호
+            📞 대표전화: 02-1234-5678<br>
+            📧 이메일: info@dj-safety.co.kr<br>
+            🏢 본사: 서울특별시 강남구 테헤란로 123
         </p>
     </div>
 </div>
@@ -506,12 +527,12 @@
     <div class="footer-content">
         <div class="footer-section">
             <h3>동진토건(주)</h3>
-            <p>경험과 기술력을 겸비한 기술인력과 안전이 최우선이되는 회사</p>
-            <p>사업자등록번호: 126-86-33414</p>
-            <p>ＫＤＨ</p>
+            <p>건설현장 안전관리 전문기업</p>
+            <p>사업자등록번호: 123-45-67890</p>
         </div>
         <div class="footer-section">
             <h3>서비스</h3>
+            <a href="https://raw.githubusercontent.com/es1063122-creator/dj-safety/main/%EC%A7%80%EB%AA%85%EC%9B%90(2025.10.01).pdf" target="_blank">지명원</a>
             <a href="https://es1063122-creator.github.io/dongjin-safety-check/" target="_blank">현장 안전점검</a>
             <a href="https://script.google.com/macros/s/AKfycbwJMgTIrp7ZBHZ6Bm0qUN2G26Rh6hRTbmNswmxLZpOMQMzlyQWfS7LQXxTgVvb2FuUl/exec" target="_blank">관리감독자 점검</a>
             <a href="https://script.google.com/macros/s/AKfycbxJH_ImVB-hZH7x0bsyKsvo7bRGDirtlZ87yuCAnDZzNH9LhMRxNZgp0-bT8iI-Ys8O/exec" target="_blank">건설장비 점검</a>
@@ -526,9 +547,9 @@
         </div>
         <div class="footer-section">
             <h3>연락처</h3>
-             <p>📞 031-792-8361</p>
-            <p>📧 es5183@djenc.co.kr</p>
-            <p>🏢 경기도 하남시 미사강변중앙로 210, 1006호</p>
+            <p>📞 02-1234-5678</p>
+            <p>📧 info@dj-safety.co.kr</p>
+            <p>🏢 서울시 강남구 테헤란로 123</p>
         </div>
     </div>
     <div class="footer-bottom">
@@ -552,4 +573,3 @@ window.addEventListener('scroll', function() {
 </script>
 </body>
 </html>
-
