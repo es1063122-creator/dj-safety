@@ -11,15 +11,6 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, Arial, sans-serif; background-color: #f4f7fb; color:#333; line-height:1.6; }
     
-    /* 로그인 스타일 */
-    #loginContainer { display:flex; justify-content:center; align-items:center; height:100vh; background:#f4f7fb; }
-    #loginBox { background:white; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.2); width:320px; text-align:center; }
-    #loginBox h2 { margin-bottom:20px; }
-    #loginBox input { width:90%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
-    #loginBox button { padding:10px 20px; border:none; border-radius:5px; background:#0a4db3; color:white; cursor:pointer; font-size:16px; }
-    #loginBox button:hover { background:#083a8a; }
-    #errorMsg { color:red; font-size:14px; margin-bottom:10px; }
-
     /* 헤더, 네비, 히어로, 서비스, 푸터 등 기존 스타일 */
     header { background-color: #0a4db3; display:flex; align-items:center; padding:15px 40px; color:white; box-shadow:0 2px 10px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 1000; }
     header img { height:55px; margin-right:15px; }
@@ -87,16 +78,6 @@
 </head>
 <body>
 
-<div id="loginContainer">
-    <div id="loginBox">
-        <h2>로그인</h2>
-        <input type="text" id="userId" placeholder="아이디 입력">
-        <div id="errorMsg"></div>
-        <button onclick="login()">로그인</button>
-    </div>
-</div>
-
-<div id="mainContent" style="display:none;">
 <header>
     <img src="https://raw.githubusercontent.com/es1063122-creator/dJsafety/main/logo.png" alt="동진토건 로고">
     <div class="site-name">동진토건(주)</div>
@@ -378,121 +359,3 @@
         <h2 class="section-title">📚 자료실</h2>
         <div class="box">
             <h2>주요 안전 및 기술 자료</h2>
-            <p>현장 안전 관련 문서, 기술 자료, 지명원 등을 다운로드할 수 있는 공간입니다.</p>
-            <ul>
-                <li><a href="https://raw.githubusercontent.com/es1063122-creator/dj-safety/main/%EC%A7%80%EB%AA%85%EC%9B%90(2025.10.01).pdf" target="_blank">최신 지명원 다운로드</a></li>
-                <li><a href="https://es1063122-creator.github.io/dongjin-safety-check/" target="_blank">현장 안전점검 시스템 바로가기</a></li>
-                <li><a href="#">기술 혁신 백서 (준비 중)</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">✉️ 문의하기</h2>
-        <div class="box">
-            <h2>동진토건에 문의하세요</h2>
-            <p>프로젝트 의뢰, 채용 및 기타 문의사항이 있으시면 언제든지 연락 주십시오.</p>
-            <p>📞 <strong>대표 전화: 031-792-8361</strong></p>
-            <p>📧 <strong>이메일: es5183@djenc.co.kr</strong></p>
-        </div>
-    </section>
-
-</div>
-
-<footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>동진토건(주)</h3>
-            <p>건설현장 안전최우선기업</p>
-            <p>사업자등록번호: 126-86-33414</p>
-            <p>KDH202511</p>
-        </div>
-        <div class="footer-section">
-            <h3>서비스</h3>
-            <a href="https://raw.githubusercontent.com/es1063122-creator/dj-safety/main/%EC%A7%80%EB%AA%85%EC%9B%90(2025.10.01).pdf" target="_blank">지명원</a>
-            <a href="https://es1063122-creator.github.io/dongjin-safety-check/" target="_blank">현장 안전점검</a>
-            <a href="https://script.google.com/macros/s/AKfycbwJMgTIrp7ZBHZ6Bm0qUN2G26Rh6hRTbmNswmxLZpOMQMzlyQWfS7LQXxTgVvb2FuUl/exec" target="_blank">관리감독자 점검</a>
-            <a href="https://script.google.com/macros/s/AKfycbxJH_ImVB-hZH7x0bsyKsvo7bRGDirtlZ87yuCAnDZzNH9LhMRxNZgp0-bT8iI-Ys8O/exec" target="_blank">건설장비 점검</a>
-            <a href="https://script.google.com/macros/s/AKfycbynWnvGZaFuucxP9qPsscDkxubehd4QsswdO5CCLGm1YTvtlqzGCDlpzQu98ALpOgZgcQ/exec" target="_blank">AI 안전 분석</a>
-            <a href="https://es1063122-creator.github.io/dj-safety2/" target="_blank">유해위험개선등록</a>
-            <a href="#resources">자료실</a>
-        </div>
-        <div class="footer-section">
-            <h3>고객지원</h3>
-            <a href="#contact">문의하기</a>
-            <a href="#resources">자료실</a>
-            <a href="#">자주 묻는 질문</a>
-        </div>
-        <div class="footer-section">
-            <h3>연락처</h3>
-            <p>📞 031-792-8361</p>
-            <p>📧 es5183@djenc.co.kr</p>
-            <p>🏢 경기도 하남시 미사강변중앙로 2110,1006호</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 동진토건(주). All rights reserved.ＫＤＨ</p>
-    </div>
-</footer>
-</div>
-
-<script>
-// 허용된 아이디 목록
-const allowedIds = [
-    "knhsjwsi4","ryuseungjae75","audtjek","estioh","thunder48","ange1985","dkthql82",
-    "youngsik1052","sj","kiki926jj","dogmeat","donghan78","wooathome2","nm_choi",
-    "jspark1104","khs1205","sbrdhg1","20230911","friends1279","hmsoo54","jaewon4630",
-    "yk978","fod1084","kdjrew","seo9182","jogalho","bc9410","es5183","sbi1519","cskong",
-    "hong21","lsd1225"
-];
-
-// 로그인 함수
-function login() {
-    const userId = document.getElementById('userId').value.trim();
-    const errorMsg = document.getElementById('errorMsg');
-
-    if(allowedIds.includes(userId)) {
-        document.getElementById('loginContainer').style.display = 'none';
-        document.getElementById('mainContent').style.display = 'block';
-    } else {
-        errorMsg.textContent = "허용되지 않은 아이디입니다.";
-    }
-}
-
-// 모바일 메뉴 토글
-function toggleMenu() {
-    const nav = document.getElementById('mainNav');
-    nav.classList.toggle('active');
-}
-
-// 모달 열기
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
-    document.body.style.overflow = 'hidden'; // 스크롤 방지
-}
-
-// 모달 닫기
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-    document.body.style.overflow = 'auto'; // 스크롤 복원
-}
-
-// 모달 외부 클릭 시 닫기
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// 스크롤 시 메뉴 자동 닫기
-window.addEventListener('scroll', function() {
-    const nav = document.getElementById('mainNav');
-    if (window.innerWidth <= 768 && nav.classList.contains('active')) {
-        nav.classList.remove('active');
-    }
-});
-</script>
-
-</body>
-</html
